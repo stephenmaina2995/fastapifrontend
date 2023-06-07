@@ -1,0 +1,41 @@
+.card {
+  display: inline-block;
+  width: 30%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 0 10px 10px 0;
+  padding: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.card p {
+  margin: 5px 0;
+}
+
+.card a {
+  text-decoration: none;
+  color: blue;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.delete-icon {
+  font-size: 20px;
+  color: red;
+}
