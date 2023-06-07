@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+.flex{
+  display:flex;
+  flex-wrap: wrap;
+}
+.destination-card{
+  justify-content: space-between;
+  background-color: aqua;
+  padding: 20px 30px;
+}
+.destination-item{
+  padding: 20px;
+}
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#category-list {
+  padding: 5px;
+}
+.main{
+  margin-top: 5%;
+}
+input{
+  height:30px;
+  width: 20%;
+}
