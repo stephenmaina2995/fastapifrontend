@@ -18,10 +18,15 @@ const Destination = () => {
     }
   }
 
-  const handleLearnMore = (event, url) => {
+  const handleLearnMore = (event, destination) => {
     event.preventDefault()
-    
-    window.location.href = url
+    const updatedDestinations = destinations.map((dest) => {
+      if (dest.id === destination.id) {
+        return { ...dest, showVisitUrl: true }
+      }
+      return dest
+    })
+    setDestinations(updatedDestinations)
   }
 
   const handleDelete = async (event, id) => {
@@ -43,25 +48,26 @@ const Destination = () => {
   }
 
   return (
-    <div>
-      {destinations.map((destination, index) => (
-        <div key={index} className='card'>
+    <div className='card-container'>
+      {destinations.map((destination) => (
+        <div key={destination.id} className='card'>
           <img src={destination.image} alt={destination.name} />
           <div>
             <h2>{destination.name}</h2>
             <p>{destination.description}</p>
             <p>Location: {destination.location}</p>
+            {destination.showVisitUrl && (
+              <p>Visit URL: {destination.visitUrl}</p>
+            )}
             <a
-              href={destination.bookingUrl}
-              onClick={(event) =>
-                handleLearnMore(event, destination.bookingUrl)
-              }
+              href={destination.visitUrl}
+              onClick={(event) => handleLearnMore(event, destination)}
             >
               Learn More
             </a>
-          
+            <br />
 
-            <button  onClick={(event) => handleDelete(event, destination.id)}>
+            <button onClick={(event) => handleDelete(event, destination.id)}>
               Delete
             </button>
           </div>
@@ -72,5 +78,3 @@ const Destination = () => {
 }
 
 export default Destination
-
-
