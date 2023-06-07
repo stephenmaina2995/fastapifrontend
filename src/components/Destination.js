@@ -26,6 +26,7 @@ function Destination() {
   }, []);
 
   return (
+    
     <div style={{width:'50%'}}>
     <div className='destination-item flex'>
       {/* <h1>Travel</h1> */}

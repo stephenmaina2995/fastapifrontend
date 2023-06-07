@@ -20,6 +20,20 @@ function App() {
     <div className="App">
       <Header/>
       <Destination/>
+      <>
+        {/* <p className="title">Registration Form</p> */}
+
+        <form className="App">
+          <input type="Name" placeholder="Name" />
+          <input type="URL" placeholder="Image" />
+          <input type="Description" placeholder="Description" />
+          <input type="Location" placeholder="Location" />
+          <input type="Visit URL" placeholder="Visit URL" />
+          {/* <input type={"submit"} */}
+          <button>Add Destination</button>
+          {/* style={{ backgroundColor: "#a1eafb" }} /> */}
+        </form>
+      </>
       {/* <destination/> */}
       {/* <p>{destination.name}</p>
       <p>{destination.location}</p>
