@@ -29,13 +29,13 @@ function Destination() {
     <div style={{width:'50%'}}>
     <div className='destination-item flex'>
       {/* <h1>Travel</h1> */}
-      {data.map((item) => (
+      {data.map((destinationItem) => (
         <div key={item.id}>
           <img src={item.image} alt={item.name} width="100%"/>
           <p>{item.name}</p>
           <p>{item.location}</p>
           <p>{item.description}</p>
-          <button>Interested</button>
+          <button onClick={()=>interested(destinationItem)}>Interested</button>
           
         </div>
       ))}
