@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import Destination from './Destination'
+import Header from './Header'
+import AddDestination from './AddDestination'
 
 const App = () => {
   const [destinations, setDestinations] = useState([])
@@ -20,8 +22,9 @@ const App = () => {
 
   return (
     <div className='App'>
-      <h1>Travel</h1>
+      <Header />
       <Destination destinations={destinations} />
+      <AddDestination />
     </div>
   )
 }
