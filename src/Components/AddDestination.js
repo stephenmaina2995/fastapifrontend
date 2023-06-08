@@ -5,6 +5,7 @@ function AddDestination() {
     name: '',
     image: '',
     description: '',
+    category:'',
     location: '',
     visitURL: '',
   })
@@ -31,6 +32,7 @@ function AddDestination() {
         name: destinationInfo['name'],
         image: destinationInfo['image'],
         description: destinationInfo['description'],
+        category:destinationInfo['category'],
         location: destinationInfo['location'],
         visitURL: destinationInfo['visitURL'],
       }),
@@ -44,6 +46,7 @@ function AddDestination() {
             name: '',
             image: '',
             description: '',
+            category:'',
             location: '',
             visitURL: '',
           })
@@ -79,6 +82,13 @@ function AddDestination() {
           name='description'
           placeholder='Description'
           value={destinationInfo.description}
+          onChange={updateForm}
+        />
+        <input
+          type='text'
+          name='category'
+          placeholder='Category'
+          value={destinationInfo.category}
           onChange={updateForm}
         />
         <input

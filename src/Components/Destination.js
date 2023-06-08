@@ -9,13 +9,10 @@ const Destination = () => {
   }, [])
 
   const fetchDestinations = async () => {
-    try {
-      const response = await fetch('http://127.0.0.1:8000/destinations')
-      const data = await response.json()
-      setDestinations(data)
-    } catch (error) {
-      console.error('Error fetching destinations:', error)
-    }
+    
+    const response = await fetch('http://127.0.0.1:8000/destinations')
+    const data = await response.json()
+    setDestinations(data)
   }
 
   const handleLearnMore = (event, destination) => {
@@ -29,23 +26,27 @@ const Destination = () => {
     setDestinations(updatedDestinations)
   }
 
-  const handleDelete = async (event, id) => {
-    event.preventDefault()
+const handleDelete = (event, id) => {
+  event.preventDefault()
+  
 
-    try {
-      const response = await fetch(`http://127.0.0.1:8000/destinations/${id}`, {
-        method: 'DELETE',
-      })
-
+  fetch(`http://127.0.0.1:8000/delete/destinations/${id}`, {
+   method: 'DELETE',
+  
+    
+  })
+    .then((response) => {
       if (response.ok) {
         fetchDestinations()
       } else {
         console.error('Failed to delete destination:', response.status)
       }
-    } catch (error) {
-      console.error('Error deleting destination:', error)
-    }
-  }
+    })
+    .catch((error) => {
+      console.error('Failed to delete destination:', error)
+    })
+}
+
 
   return (
     <div className='card-container'>
