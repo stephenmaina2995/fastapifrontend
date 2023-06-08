@@ -3,6 +3,9 @@ import './App.css';
 import {useEffect, useState} from 'react';
 import Destination from './components/Destination';
 import Header from './components/Header';
+import Login from './components/Login';
+import AddDestination from './components/AddDestination';
+// import SignUp from './components/SignUp';
 
 function App() {
   const[data, setData]= useState([])
@@ -19,21 +22,11 @@ function App() {
   return (
     <div className="App">
       <Header/>
+      <Login/>
+      {/* <SignUp/> */}
       <Destination/>
-      <>
-        {/* <p className="title">Registration Form</p> */}
-
-        <form className="App">
-          <input type="Name" placeholder="Name" />
-          <input type="URL" placeholder="Image" />
-          <input type="Description" placeholder="Description" />
-          <input type="Location" placeholder="Location" />
-          <input type="Visit URL" placeholder="Visit URL" />
-          {/* <input type={"submit"} */}
-          <button>Add Destination</button>
-          {/* style={{ backgroundColor: "#a1eafb" }} /> */}
-        </form>
-      </>
+      
+      <AddDestination/>
       {/* <destination/> */}
       {/* <p>{destination.name}</p>
       <p>{destination.location}</p>
